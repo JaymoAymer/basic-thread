@@ -5,22 +5,9 @@
 #include <unistd.h>
 #include <pthread.h>
 
-void* routine()
-{
-    printf("Inside the thread - Test from thread\n");
-    sleep(4);
-    printf("Inside the thread - Ending thread\n");
-}
-
-void pthreadCreateErrorHandler()
-{
-    printf("[EAGAIN] - Insufficient resources to create a new thread\n");
-}
-
-void pthreadJoinErrorHandler()
-{
-    printf("[ESRCH] - No thread with the given ID could be found\n");
-}
+#include "routine.h"
+#include "pthreadCreateErrorHandler.h"
+#include "pthreadJoinErrorHandler.h"
 
 int main(int argc, char* argv[])
 {

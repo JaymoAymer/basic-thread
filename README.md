@@ -19,9 +19,50 @@ The main implementation in C was done utilizing the **[POSIX threads/pthreads](h
 
 ## Structure
 
+```bash
+.
+├── Dockerfile
+├── LICENSE
+├── README.md
+├── img
+│   └── single-and-multithreaded-processes.png
+└── src
+├── Makefile
+├── main.c
+├── pthreadCreateErrorHandler.c
+├── pthreadCreateErrorHandler.h
+├── pthreadJoinErrorHandler.c
+├── pthreadJoinErrorHandler.h
+├── routine.c
+└── routine.h
+```
+
 ## Prerequisites
 
+- Docker
+
 ## Usage
+
+1. To `build` the Docker image
+```bash
+docker build -t threads .
+```
+2. To run and enter the `threads` container
+```bash
+docker run -v ${PWD}/src:/src -it threads
+```
+3. Change into the `src` directory
+```bash
+cd src
+```
+4. Run the Makefile to build and run the `threads` executable
+```bash
+make
+```
+5. To clean the src directory of all `object` files and the `threads` executable
+```bash
+make clean
+```
 
 ## License
 
